@@ -1,0 +1,4 @@
+Em Python podemos ler arquivos.
+Em Python podemos criar classes.
+Em Python e bem simples criar funcoes.
+Em Python podemos pedir entradas de dados para os usuarios.
