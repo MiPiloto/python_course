@@ -1,12 +1,17 @@
+# Dataset para teste
 dataset = [
-    [1,1,0,1],
-    [1,0,1,0],
+    [0,0,1,1],
+    [1,0,1,1],
+    [1,1,1,0],
     [0,0,0,1],
-    [1,0,0,1]]
+    [0,1,1,1],
+    [1,0,1,1],
+    [1,1,0,0]]
 
+# pesos iniciais, com bias sendo w[0]
 weights = [0, 0, 0, 0]
 
-# perceptron prediction
+# funcão de predição do perceptron
 def predict(row, weights):
     bias = weights[0]
     print(len(row))
@@ -22,7 +27,7 @@ for row in dataset:
     prediction = predict(row, weights)
     print("Expected: " + str({row[-1]}) + "Predicted: " + str({prediction}))
 
-# function to training weights
+# função para treinar os pesos
 def train_weights(train, l_rate, n_epoch):
 	weights = [0.0 for i in range(len(train[0]))]
 	for epoch in range(n_epoch):
@@ -37,11 +42,11 @@ def train_weights(train, l_rate, n_epoch):
 		print('>epoch=%d, lrate=%.3f, error=%.3f' % (epoch, l_rate, sum_error))
 	return weights
 
-# example of training weights
-# learning rate, arbitrary value
+# exemplo de treinamento
+# taxa de aprendizado
 l_rate = 0.1
-# number of epochs(number of times to run through the training data while updating the weight)
-n_epoch = 5
-# calling train weights
+# numero de epocas (vezes para rodar os dados de treinamento enquanto atualiza os pesos
+n_epoch = 10
+# chamada da função treinar pesos
 weights = train_weights(dataset, l_rate, n_epoch)
 print(weights)
